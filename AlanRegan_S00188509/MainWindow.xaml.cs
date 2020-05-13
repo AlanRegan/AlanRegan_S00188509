@@ -47,7 +47,7 @@ namespace AlanRegan_S00188509
             if (selectedPhone != null)
             {
                 // Display car info
-                string phoneCost = $"Blah: {selectedPhone.Name}";
+                string phoneCost = $"Blah: {selectedPhone.Price.ToString()}";
                 tblkPrice.Text = phoneCost;
 
                 // Display car image
