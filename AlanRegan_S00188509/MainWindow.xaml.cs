@@ -20,9 +20,25 @@ namespace AlanRegan_S00188509
     /// </summary>
     public partial class MainWindow : Window
     {
+        PhoneData db = new PhoneData();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query = from p in db.PhoneDetails
+                        select p.Name;
+
+            lbxPhones.ItemsSource = query.ToList();
+            
+        }
+
+        private void lbxPhones_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
