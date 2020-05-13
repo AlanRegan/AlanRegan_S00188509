@@ -31,14 +31,28 @@ namespace AlanRegan_S00188509
         {
             var query = from p in db.PhoneDetails
                         select p.Name;
-
+            
             lbxPhones.ItemsSource = query.ToList();
+           
             
         }
 
         private void lbxPhones_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Display phone info
+            // Determine which phone was selected:
+            Phone selectedPhone = lbxPhones.SelectedItem as Phone;
 
+            // Check for null
+            if (selectedPhone != null)
+            {
+                // Display car info
+                string phoneCost = $"Blah: {selectedPhone.Name}";
+                tblkPrice.Text = phoneCost;
+
+                // Display car image
+                imgPhone.Source = new BitmapImage(new Uri($"/images/{selectedPhone.Phone_Image}", UriKind.Relative));
+            }
         }
     }
 }
