@@ -46,11 +46,11 @@ namespace AlanRegan_S00188509
             // Check for null
             if (selectedPhone != null)
             {
-                // Display car info
-                string phoneCost = $"Blah: {selectedPhone.Price.ToString()}";
+                // Display phone price
+                string phoneCost = $"{selectedPhone.Price.ToString()}";
                 tblkPrice.Text = phoneCost;
 
-                // Display car image
+                // Display phone image
                 imgPhone.Source = new BitmapImage(new Uri($"/images/{selectedPhone.Phone_Image}", UriKind.Relative));
             }
         }
